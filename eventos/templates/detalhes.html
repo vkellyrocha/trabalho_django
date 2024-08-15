@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ evento.nome_evento }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'eventos/css/styles.css' %}">
+</head>
+<body>
+    <h1>{{ evento.nome_evento }}</h1>
+    <p>Tipo :{{evento.tipo}}</p>
+    <p>Data: {{evento.data_inicio}} {% if evento.data_final%} a {{ evento.data_final }}{% endif %}</p>
+    <p>Horário: {{ evento.horario}}</p>
+    <p>Local: {{ evento.local}}</p>
+    <p>Cidade: {{evento.cidade}}</p>
+    <p>Entrada: {% if evento.gratuito %}Gratuito{% else %}R$ {{evento.valor}}{% endif %}</p>
+    <p>Vagas: {{ evento.quantidade_vagas }}</p>
+    <p>Descrição: {{ evento.descricao }}</p>
+    
+</body>
+</html>

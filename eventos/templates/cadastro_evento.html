@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar evento</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'eventos/css/styles.css' %}">
+</head>
+<body>
+    <h1>Criar novo evento</h1>
+    <div id="formulario">
+        <form action="{% url 'cadastro_evento' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+    
+            <button name="submit">Salvar</button>
+        </form>
+    </div>
+    
+    
+</body>
+</html>
